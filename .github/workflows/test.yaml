@@ -1,20 +1,19 @@
-- name: sample test pipeline
-  run-name: "Triggered ${{ GITHUB_EVENT_NAME }} by ${{ GITHUB_ACTOR }} with ${{ GITHUB_ACTOR_ID}}"
-
-  on:
-    workflow_dispatch:
-      inputs:
-        user_stmt:
-          type: string
-          description: asking user input to print
-          required: true
-  jobs:
-    my_job:
-     name: personal-job
-     runs_on: ubuntu-latest
-     steps:
-       - name: checkout curent repo
-         uses: actions/checkout@v4
-         run: |
-           echo $GITHUB_WORKSPACE
-           pwd
+name: sample test pipeline
+run-name: "Triggered ${{ GITHUB_EVENT_NAME }} by ${{ GITHUB_ACTOR }} with ${{ GITHUB_ACTOR_ID}}"
+on:
+  workflow_dispatch:
+    inputs:
+      user_stmt:
+        type: string
+        description: asking user input to print
+        required: true
+jobs:
+  my_job:
+    name: personal-job
+    runs_on: ubuntu-latest
+    steps:
+      - name: checkout curent repo
+        uses: actions/checkout@v4
+        run: |
+          echo $GITHUB_WORKSPACE
+          pwd
