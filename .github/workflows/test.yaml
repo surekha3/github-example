@@ -14,6 +14,7 @@ jobs:
     steps:
       - name: checkout curent repo
         uses: actions/checkout@v4
+      - name: print current workspace repo
         run: |
           echo $GITHUB_WORKSPACE
           pwd
