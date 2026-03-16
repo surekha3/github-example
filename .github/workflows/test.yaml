@@ -1,5 +1,5 @@
 name: sample test pipeline
-run-name: "Triggered ${{ GITHUB_EVENT_NAME }} by ${{ GITHUB_ACTOR }} with ${{ GITHUB_ACTOR_ID}}"
+run-name: "Triggered ${{ github.event_name }} by ${{ github.actor }} with ${{ github.actor_id}}"
 on:
   workflow_dispatch:
     inputs:
