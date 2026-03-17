@@ -18,3 +18,6 @@ jobs:
         run: |
           echo $GITHUB_WORKSPACE
           pwd
+          ls
+          python python_code.py
+
