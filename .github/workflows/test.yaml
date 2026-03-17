@@ -1,12 +1,21 @@
 name: sample test pipeline
 #run-name: "Triggered ${{ github.event_name }} by ${{ github.actor }} with ${{ github.actor_id}}"
 on:
+  push:
+    branches:
+      - develop
+      - feature/*
   workflow_dispatch:
     inputs:
       user_stmt:
         type: string
         description: asking user input to print
+        required: false
+      user_number:
+        type: string
+        description: enter whole number
         required: true
+      
 jobs:
   my_job:
     name: personal-job
@@ -17,7 +26,5 @@ jobs:
       - name: print current workspace repo
         run: |
           echo $GITHUB_WORKSPACE
-          pwd
-          ls
-          python python_code.py
+          python3 test3.py $user_number
 
